@@ -1,7 +1,5 @@
 from decimal import Decimal
-
 from django.conf import settings
-
 from shop.models import Product
 
 
@@ -12,7 +10,7 @@ class Cart(object):
         initialize the cart
         """
         self.session = request.session
-        cart = sels.session.get(settings.CART_SESSION_ID)
+        cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
             # save an empty cart in the session
             cart = self.session[settings.CART_SESSION_ID] = {}
@@ -22,11 +20,11 @@ class Cart(object):
         """
         Iterate over the items in the cart and get the products from database
         """
-        product_ids = self.cart.kays()
+        product_ids = self.cart.keys()
         # get teh product OBJECTS and add them to the cart
         products = Product.objects.filter(id__in=product_ids)
         for product in products:
-            self.cart[str(product.id)][product] = product
+            self.cart[str(product.id)]['product'] = product
 
         for item in self.cart.values():
             item['price'] = Decimal(item['price'])
@@ -64,7 +62,7 @@ class Cart(object):
 
     def save(self):
         # update thesession cart
-        self.session[settins.CART_SESSION_ID] = self.cart
+        self.session[settings.CART_SESSION_ID] = self.cart
         # mark the session as modified to make sure it is saved
         self.session.modified = True
 
