@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^payment/', include('payment.urls', namespace='payment')),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
     url(r'^', include('shop.urls', namespace='shop')),
+    url(r'^coupons/', include('coupons.urls', namespace='coupons')),
 ]
 
 if settings.DEBUG:
