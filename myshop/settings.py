@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'payment',
     'coupons',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
