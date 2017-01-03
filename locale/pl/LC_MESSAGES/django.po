@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-02 19:42+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2017-01-03 20:25+0100\n"
+"PO-Revision-Date: 2017-01-03 20:40+0000\n"
+"Last-Translator: b'  <mateusz@karmowski.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
 
 #: .\cart\forms.py:11 .\cart\templates\cart\detail.html:14
 msgid "Quantity"
@@ -62,7 +62,7 @@ msgid ""
 "                    "
 msgstr ""
 "\n"
-"<td>Kupon \"%(code)s\" (%(discount)s%% obniżki</td>\n"
+"<td>Kupon \"%(code)s\" (%(discount)s%% obniżki)</td>\n"
 "                    "
 
 #: .\cart\templates\cart\detail.html:60
@@ -89,36 +89,81 @@ msgstr "Do kasy"
 msgid "Coupon"
 msgstr "Kupon"
 
-#: .\myshop\settings.py:106
+#: .\myshop\settings.py:107
 msgid "English"
 msgstr "Angielski"
 
-#: .\myshop\settings.py:107
+#: .\myshop\settings.py:108
 msgid "Polish"
 msgstr "Polski"
+
+#: .\myshop\urls.py:10
+msgid "^cart/"
+msgstr "^koszyk/"
+
+#: .\myshop\urls.py:11
+msgid "^orders/"
+msgstr "^zamowienia/"
+
+#: .\myshop\urls.py:12
+msgid "^payment/"
+msgstr "^platnosci/"
+
+#: .\myshop\urls.py:14
+#, fuzzy
+#| msgid "Coupon"
+msgid "^coupons/"
+msgstr "Kupon"
+
+#: .\payment\urls.py:7
+msgid "^process/$"
+msgstr "^przetwarzanie/$"
+
+#: .\payment\urls.py:8
+msgid "^done/$"
+msgstr "^zakonczono/$"
+
+#: .\payment\urls.py:9
+msgid "^canceled/$"
+msgstr "^anulowano/$"
+
+#: .\shop\templates\admin\parler\deletion_not_allowed.html:5
+#, python-format
+msgid ""
+"Deletion of the %(language_name)s translation of %(object_name)s "
+"'%(escaped_object)s' is not allowed, because it is the last available "
+"translation of this instance."
+msgstr ""
+
+#: .\shop\templates\admin\parler\language_tabs.html:15
+#: .\shop\templates\admin\parler\language_tabs.html:17
+msgid "Delete Translation"
+msgstr ""
 
 #: .\shop\templates\shop\base.html:7 .\shop\templates\shop\base.html:12
 msgid "My shop"
 msgstr "Mój sklep"
 
 #: .\shop\templates\shop\base.html:18
+msgid "Language"
+msgstr ""
+
+#: .\shop\templates\shop\base.html:34
 msgid "Your cart"
 msgstr "Twój koszyk"
 
-#: .\shop\templates\shop\base.html:20
+#: .\shop\templates\shop\base.html:36
 #, python-format
 msgid ""
 "\n"
-"                            %(total_items)s item%(total_items_plural)s, $%"
-"(total_price)s\n"
+"                            %(total_items)s item%(total_items_plural)s, $%(total_price)s\n"
 "                        "
 msgstr ""
 "\n"
-"                            %(total_items)s produkt%(total_items_plural)s, $%"
-"(total_price)s\n"
+"                            %(total_items)s produkt(y), $%(total_price)s\n"
 "                        "
 
-#: .\shop\templates\shop\base.html:25
+#: .\shop\templates\shop\base.html:41
 msgid "Your cart is empty"
 msgstr "Twój koszyk jest pusty"
 
