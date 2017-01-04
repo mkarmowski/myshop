@@ -8,6 +8,7 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
                       port=settings.REDIS_PORT,
                       db=settings.REDIS_DB)
 
+
 class Recommender(object):
 
     def get_product_key(self, id):
@@ -22,7 +23,7 @@ class Recommender(object):
                     # increment score for prod purchased together
                     r.zincrby(self.get_product_key(product_id),with_id, amount=1)
 
-    def suggest_product_for(self, products, max_results=3):
+    def suggest_products_for(self, products, max_results=3):
         product_ids = [p.id for p in products]
         if len(products) == 1:
             # only one product
